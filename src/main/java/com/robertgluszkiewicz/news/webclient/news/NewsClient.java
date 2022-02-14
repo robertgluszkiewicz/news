@@ -5,11 +5,6 @@ import com.robertgluszkiewicz.news.webclient.news.dto.OpenNewsNewsDto;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-
 @Component
 public class NewsClient {
     private static final String TOP_HEADLINES_NEWS_URL = "https://newsapi.org/v2/top-headlines";
