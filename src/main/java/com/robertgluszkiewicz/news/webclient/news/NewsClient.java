@@ -16,27 +16,15 @@ public class NewsClient {
     private static final String API_KEY = "db2a29559fa04ecb92bce507099f6af9";
     private RestTemplate restTemplate = new RestTemplate();
 
-//    public NewsDto getNewsForCategory(String category) {
-//        OpenNewsNewsDto openNewsNewsDto = callGetMethod("?apiKey={apiKey}&country=pl&category={category}",
-//                OpenNewsNewsDto.class,
-//                API_KEY, category);
-//        return NewsDto.builder()
-//                .title(openNewsNewsDto.getArticle().getTitle())
-//                .description(openNewsNewsDto.getArticle().getDescription())
-//                .author(openNewsNewsDto.getArticle().getAuthor())
-//                .build();
-//    }
-
-    public List<NewsDto> getNewsForCategory(String category) {
+    public NewsDto getNewsForCategory(String category) {
         OpenNewsNewsDto openNewsNewsDto = callGetMethod("?apiKey={apiKey}&country=pl&category={category}",
                 OpenNewsNewsDto.class,
                 API_KEY, category);
-
-        NewsDto[] newsResponse = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?apiKey=db2a29559fa04ecb92bce507099f6af9&country=pl&category=business", NewsDto[].class);
-
-        return Optional.ofNullable(newsResponse)
-                .map(Arrays::asList)
-                .orElse(Collections.emptyList());
+        return NewsDto.builder()
+                .title(openNewsNewsDto.getArticle().getTitle())
+                .description(openNewsNewsDto.getArticle().getDescription())
+                .author(openNewsNewsDto.getArticle().getAuthor())
+                .build();
     }
 
     private <T> T callGetMethod(String url, Class<T> responseType, Object...objects) {
