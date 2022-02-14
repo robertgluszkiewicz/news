@@ -11,6 +11,6 @@ My comments:
 3. The application connects, but get wrong response from service probably without any article element. Then the openNewsNewsDto.getArticle() method returns null, so calling another .getTitle() method on null gives a NullPointerException.
 
 To do:
-1. Find the cause of the wrong answer.
-2. Deserialize JSON to POJO.
-3. Provide String values to the writeToFile() method.
+1. Find the reason of the received wrong response.
+2. Deserialize received JSON wit articles to POJO.
+3. Provide String values from POJO to the writeToFile() method.
