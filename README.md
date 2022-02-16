@@ -1,7 +1,15 @@
 #News Application
 
-Required application features:  
-1. Uses the public API https://newsapi.org  
+Attention!
+New (and working) version of News application is here:
+https://github.com/robertgluszkiewicz/news-v2.0
+
+To be fair, in this repository I only edited the README.md file and added the new version of working application to the new repository.
+
+
+
+Required application features:
+1. Uses the public API https://newsapi.org
 2. Downloads articles from the business category for Poland  .
 3. Saves the downloaded articles to the text file in the format "title: description: author".
 
